@@ -1,0 +1,42 @@
+{
+  "name": "plugin-notes",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "bootstrap": "flex-check-start",
+    "postinstall": "npm run bootstrap",
+    "prestart": "npm run bootstrap",
+    "start": "flex-plugin start",
+    "build": "flex-plugin build",
+    "predeploy": "npm run build",
+    "deploy": "flex-plugin deploy",
+    "test": "flex-plugin test --env=jsdom",
+    "list": "flex-plugin list",
+    "eject": "flex-plugin eject"
+  },
+  "devDependencies": {
+    "@twilio/flex-ui": "^1"
+  },
+  "dependencies": {
+    "@craco/craco": "^5.0.2",
+    "core-js": "^2.6.5",
+    "craco-config-flex-plugin": "^3.0.12-alpha.0",
+    "flex-plugin": "^3.0.9-alpha.0",
+    "flex-plugin-scripts": "^3.1.1-alpha.0",
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
+    "react-scripts": "^3.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
