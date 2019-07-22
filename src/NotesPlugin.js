@@ -1,6 +1,6 @@
-import { FlexPlugin } from 'flex-plugin';
+import { FlexPlugin, loadCSS } from 'flex-plugin';
 import React from 'react';
-import CustomTaskListComponent from './components/CustomTaskListComponent';
+import Notes from './components/Notes';
 
 const PLUGIN_NAME = 'NotesPlugin';
 
@@ -17,11 +17,10 @@ export default class NotesPlugin extends FlexPlugin {
    * @param manager { import('@twilio/flex-ui').Manager }
    */
   init(flex, manager) {
-    flex.AgentDesktopView.Panel1.Content.add(
-      <CustomTaskListComponent key="demo-component" />,
-      {
-        sortOrder: -1,
-      }
+    loadCSS('https://rose-gaur-9610.twil.io/assets/styles.css');
+
+    flex.AgentDesktopView.Panel2.Content.replace(
+      <Notes key="notes" />,
     );
   }
 }
