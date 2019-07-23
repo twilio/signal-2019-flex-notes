@@ -13,7 +13,14 @@ export default class Notes extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3001/notes')
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                'X-FlexToken': this.props.manager.user.token,
+            }
+        };
+
+        axios.get('http://localhost:3001/notes', config)
             .then((response) => {
                 this.setState({ notes: response.data.notes });
             })
@@ -24,8 +31,15 @@ export default class Notes extends Component {
 
     handleTextareaOnChange = (e) => {
         const notes = e.target.value;
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                'X-FlexToken': this.props.manager.user.token,
+            }
+        };
 
-        axios.post('http://localhost:3001/notes', { notes });
+
+        axios.post('http://localhost:3001/notes', { notes }, config);
         this.setState({ notes });
     }
 

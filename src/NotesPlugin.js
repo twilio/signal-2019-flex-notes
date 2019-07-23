@@ -20,7 +20,7 @@ export default class NotesPlugin extends FlexPlugin {
     loadCSS('https://rose-gaur-9610.twil.io/assets/styles.css');
 
     flex.AgentDesktopView.Panel2.Content.replace(
-      <Notes key="notes" />,
+      <Notes key="notes" manager={manager} />,
     );
   }
 }
