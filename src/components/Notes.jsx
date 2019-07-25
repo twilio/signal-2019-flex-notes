@@ -4,10 +4,13 @@ import Card from '@material-ui/core/Card';
 import { NotesStyles } from './Notes.Styles';
 import axios from 'axios';
 
-export default class Notes extends Component {
-    constructor() {
-        super();
+const BACKUP_SERVER_URL = 'https://hidden-anchorage-65311.herokuapp.com/notes';
 
+export default class Notes extends Component {
+    constructor(props) {
+        super(props);
+
+        this.serverUrl = props.manager.serviceConfiguration.attributes.notes_server_url || BACKUP_SERVER_URL;
         this.state = {
             notes: '',
         }
@@ -21,7 +24,7 @@ export default class Notes extends Component {
             }
         };
 
-        axios.get('http://localhost:3001/notes', config)
+        axios.get(this.serverUrl, config)
             .then((response) => {
                 this.setState({ notes: response.data.notes });
             })
@@ -41,7 +44,7 @@ export default class Notes extends Component {
         };
 
 
-        axios.post('http://localhost:3001/notes', { notes }, config);
+        axios.post(this.serverUrl, { notes }, config);
         this.setState({ notes });
     }
 

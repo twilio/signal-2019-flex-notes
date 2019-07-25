@@ -4,6 +4,7 @@ import React from 'react';
 import Notes from './components/Notes';
 
 const PLUGIN_NAME = 'NotesPlugin';
+const BACKUP_CSS_URL = 'https://rose-gaur-9610.twil.io/assets/styles.css';
 
 export default class NotesPlugin extends FlexPlugin {
   constructor() {
@@ -18,7 +19,7 @@ export default class NotesPlugin extends FlexPlugin {
    * @param manager { import('@twilio/flex-ui').Manager }
    */
   init(flex, manager) {
-    loadCSS('https://rose-gaur-9610.twil.io/assets/styles.css');
+    loadCSS(manager.serviceConfiguration.attributes.notes_stylesheet_url || BACKUP_CSS_URL);
 
     Notifications.registerNotification({
       id: "notesError",
