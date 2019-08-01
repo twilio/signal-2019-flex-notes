@@ -1,3 +1,4 @@
+import { Notifications } from "@twilio/flex-ui";
 import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
 import { NotesStyles } from './Notes.Styles';
@@ -25,7 +26,8 @@ export default class Notes extends Component {
                 this.setState({ notes: response.data.notes });
             })
             .catch((error) => {
-                this.setState({ notes: "Couldn't load notes..." });
+                Notifications.showNotification("notesError", null);
+                console.error("Notes could not be loaded");
             });
     }
 

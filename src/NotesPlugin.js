@@ -1,3 +1,4 @@
+import { Notifications, NotificationType } from "@twilio/flex-ui";
 import { FlexPlugin, loadCSS } from 'flex-plugin';
 import React from 'react';
 import Notes from './components/Notes';
@@ -18,6 +19,12 @@ export default class NotesPlugin extends FlexPlugin {
    */
   init(flex, manager) {
     loadCSS('https://rose-gaur-9610.twil.io/assets/styles.css');
+
+    Notifications.registerNotification({
+      id: "notesError",
+      content: "Sorry, your notes couldn't be loaded",
+      type: NotificationType.error
+    });
 
     flex.AgentDesktopView.Panel2.Content.replace(
       <Notes key="notes" manager={manager} />,
