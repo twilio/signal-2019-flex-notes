@@ -3,16 +3,19 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "bootstrap": "flex-check-start",
-    "postinstall": "npm run bootstrap",
-    "prestart": "npm run bootstrap",
-    "start": "flex-plugin start",
+    "bootstrap": "flex-plugin check-start",
+    "prebuild": "rimraf build && npm run bootstrap",
     "build": "flex-plugin build",
+    "clear": "flex-plugin clear",
     "predeploy": "npm run build",
     "deploy": "flex-plugin deploy",
-    "test": "flex-plugin test --env=jsdom",
+    "eject": "flex-plugin eject",
+    "postinstall": "npm run bootstrap",
     "list": "flex-plugin list",
-    "eject": "flex-plugin eject"
+    "remove": "flex-plugin remove",
+    "prestart": "npm run bootstrap",
+    "start": "flex-plugin start",
+    "test": "flex-plugin test --env=jsdom"
   },
   "devDependencies": {
     "@twilio/flex-ui": "^1"
@@ -20,9 +23,9 @@
   "dependencies": {
     "@craco/craco": "^5.0.2",
     "core-js": "^2.6.5",
-    "craco-config-flex-plugin": "^3.0.12-alpha.0",
-    "flex-plugin": "^3.0.9-alpha.0",
-    "flex-plugin-scripts": "^3.1.1-alpha.0",
+    "craco-config-flex-plugin": "^3.0.0",
+    "flex-plugin": "^3.0.0",
+    "flex-plugin-scripts": "^3.0.0",
     "react": "16.5.2",
     "react-dom": "16.5.2",
     "react-scripts": "^3.0.0"
