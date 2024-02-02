@@ -23,7 +23,7 @@
   "dependencies": {
     "@craco/craco": "^5.0.2",
     "core-js": "^2.6.5",
-    "craco-config-flex-plugin": "^3.0.0",
+    "craco-config-flex-plugin": "^3.14.6",
     "flex-plugin": "^3.0.0",
     "flex-plugin-scripts": "^3.0.0",
     "react": "16.5.2",
