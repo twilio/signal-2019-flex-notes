@@ -21,14 +21,14 @@
     "@twilio/flex-ui": "^1"
   },
   "dependencies": {
-    "@craco/craco": "^5.0.2",
+    "@craco/craco": "^7.0.0",
     "core-js": "^2.6.5",
     "craco-config-flex-plugin": "^3.0.0",
     "flex-plugin": "^3.0.0",
     "flex-plugin-scripts": "^3.0.0",
     "react": "16.5.2",
     "react-dom": "16.5.2",
-    "react-scripts": "^3.0.0"
+    "react-scripts": "^5.0.0"
   },
   "browserslist": {
     "production": [
